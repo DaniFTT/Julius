@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{99703ED8-8734-4EB8-82ED-B5D99B8D4DDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FCDDC2D1-0269-4A26-994F-34ED770C5B09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{8DFD93B5-BEED-45DA-AE6E-B2276B40A4BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{D3BD2006-127F-4A16-B611-ABC6418EEF65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{23FB4F46-CF13-4880-A2E4-0BA358580646}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{D73689E3-7D7B-4490-A7F3-AE22C0AA33E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - PresentationTests", "1 - PresentationTests", "{CAF1C640-A983-4AB0-82FD-7457A04A1DD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - ApplicationTests", "2 - ApplicationTests", "{38C146C6-E37B-4A45-988E-E16D62212F82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - DomainTests", "3 - DomainTests", "{5B7689C5-C066-42E6-96EA-E149F2666A30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Domain", "Julius.Domain\Julius.Domain.csproj", "{267D9E41-7C3E-4D08-B784-92EC5B3113DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Application", "Julius.Application\Julius.Application.csproj", "{C8800AEE-7A50-44B2-8D63-7EAE2158D472}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{267D9E41-7C3E-4D08-B784-92EC5B3113DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{267D9E41-7C3E-4D08-B784-92EC5B3113DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{267D9E41-7C3E-4D08-B784-92EC5B3113DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{267D9E41-7C3E-4D08-B784-92EC5B3113DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8800AEE-7A50-44B2-8D63-7EAE2158D472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8800AEE-7A50-44B2-8D63-7EAE2158D472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8800AEE-7A50-44B2-8D63-7EAE2158D472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8800AEE-7A50-44B2-8D63-7EAE2158D472}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8DFD93B5-BEED-45DA-AE6E-B2276B40A4BA} = {99703ED8-8734-4EB8-82ED-B5D99B8D4DDF}
+		{D3BD2006-127F-4A16-B611-ABC6418EEF65} = {99703ED8-8734-4EB8-82ED-B5D99B8D4DDF}
+		{23FB4F46-CF13-4880-A2E4-0BA358580646} = {99703ED8-8734-4EB8-82ED-B5D99B8D4DDF}
+		{D73689E3-7D7B-4490-A7F3-AE22C0AA33E9} = {99703ED8-8734-4EB8-82ED-B5D99B8D4DDF}
+		{CAF1C640-A983-4AB0-82FD-7457A04A1DD3} = {FCDDC2D1-0269-4A26-994F-34ED770C5B09}
+		{38C146C6-E37B-4A45-988E-E16D62212F82} = {FCDDC2D1-0269-4A26-994F-34ED770C5B09}
+		{5B7689C5-C066-42E6-96EA-E149F2666A30} = {FCDDC2D1-0269-4A26-994F-34ED770C5B09}
+		{267D9E41-7C3E-4D08-B784-92EC5B3113DD} = {23FB4F46-CF13-4880-A2E4-0BA358580646}
+		{C8800AEE-7A50-44B2-8D63-7EAE2158D472} = {D3BD2006-127F-4A16-B611-ABC6418EEF65}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5D12C56-F239-4BB9-8C70-2B1276F338A4}
+	EndGlobalSection
+EndGlobal
