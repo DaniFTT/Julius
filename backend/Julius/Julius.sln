@@ -15,27 +15,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{D73689E3-7D7B-4490-A7F3-AE22C0AA33E9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - PresentationTests", "1 - PresentationTests", "{CAF1C640-A983-4AB0-82FD-7457A04A1DD3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - PresentationTests", "2 - PresentationTests", "{CAF1C640-A983-4AB0-82FD-7457A04A1DD3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - ApplicationTests", "2 - ApplicationTests", "{38C146C6-E37B-4A45-988E-E16D62212F82}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - ApplicationTests", "3 - ApplicationTests", "{38C146C6-E37B-4A45-988E-E16D62212F82}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - DomainTests", "3 - DomainTests", "{5B7689C5-C066-42E6-96EA-E149F2666A30}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - DomainTests", "4 - DomainTests", "{5B7689C5-C066-42E6-96EA-E149F2666A30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Domain", "src\Julius.Domain\Julius.Domain.csproj", "{267D9E41-7C3E-4D08-B784-92EC5B3113DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Domain", "src\Julius.Domain\Julius.Domain.csproj", "{267D9E41-7C3E-4D08-B784-92EC5B3113DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Application", "src\Julius.Application\Julius.Application.csproj", "{C8800AEE-7A50-44B2-8D63-7EAE2158D472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Application", "src\Julius.Application\Julius.Application.csproj", "{C8800AEE-7A50-44B2-8D63-7EAE2158D472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.WebAPI", "src\Julius.WebAPI\Julius.WebAPI.csproj", "{BEE629FD-826D-467A-8F8B-1EDD6F47B2EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.WebAPI", "src\Julius.WebAPI\Julius.WebAPI.csproj", "{BEE629FD-826D-467A-8F8B-1EDD6F47B2EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{4D69603B-C180-4D64-BD20-EA88D5404889}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{9BC81E1C-0B8B-4ECA-91CF-0564288C335F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Infrastructure.Data", "src\Julius.Infrastructure.Data\Julius.Infrastructure.Data.csproj", "{97B1F7D9-11D0-4D9C-BBB4-0E5B063F36E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Infrastructure.Data", "src\Julius.Infrastructure.Data\Julius.Infrastructure.Data.csproj", "{97B1F7D9-11D0-4D9C-BBB4-0E5B063F36E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Infrastructure.Swagger", "src\Julius.Infrastructure.Swagger\Julius.Infrastructure.Swagger.csproj", "{3622C732-874A-497C-B808-4B10E0407DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Infrastructure.Swagger", "src\Julius.Infrastructure.Swagger\Julius.Infrastructure.Swagger.csproj", "{3622C732-874A-497C-B808-4B10E0407DE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Infrastructure.IoC", "src\Julius.Infrastructure.IoC\Julius.Infrastructure.IoC.csproj", "{6414967A-F606-4676-A4F0-A68F6245E6E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Infrastructure.IoC", "src\Julius.Infrastructure.IoC\Julius.Infrastructure.IoC.csproj", "{6414967A-F606-4676-A4F0-A68F6245E6E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - ArchitectureTests", "1 - ArchitectureTests", "{73A259B9-37CA-472D-91F8-270AA9F8BFE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecture.Tests", "Architecture.Tests\Architecture.Tests.csproj", "{26F87D16-8FE4-4205-93DF-C07308353BA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,10 @@ Global
 		{6414967A-F606-4676-A4F0-A68F6245E6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6414967A-F606-4676-A4F0-A68F6245E6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6414967A-F606-4676-A4F0-A68F6245E6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F87D16-8FE4-4205-93DF-C07308353BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F87D16-8FE4-4205-93DF-C07308353BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F87D16-8FE4-4205-93DF-C07308353BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F87D16-8FE4-4205-93DF-C07308353BA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +95,8 @@ Global
 		{97B1F7D9-11D0-4D9C-BBB4-0E5B063F36E5} = {4D69603B-C180-4D64-BD20-EA88D5404889}
 		{3622C732-874A-497C-B808-4B10E0407DE2} = {9BC81E1C-0B8B-4ECA-91CF-0564288C335F}
 		{6414967A-F606-4676-A4F0-A68F6245E6E6} = {9BC81E1C-0B8B-4ECA-91CF-0564288C335F}
+		{73A259B9-37CA-472D-91F8-270AA9F8BFE9} = {FCDDC2D1-0269-4A26-994F-34ED770C5B09}
+		{26F87D16-8FE4-4205-93DF-C07308353BA9} = {73A259B9-37CA-472D-91F8-270AA9F8BFE9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5D12C56-F239-4BB9-8C70-2B1276F338A4}
