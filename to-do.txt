@@ -1,0 +1,2 @@
+1 - Montar diagrama de classes e de banco
+2 - Verificar sobre os testes de arquitetura
