@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Julius.SharedKernel\Julius.SharedKernel.csproj" />
+    <ProjectReference Include="..\Julius.Domain\Julius.Domain.csproj" />
+    <ProjectReference Include="..\Julius.SharedKernel\Julius.SharedKernel.csproj" />
+  </ItemGroup>
+
 </Project>
