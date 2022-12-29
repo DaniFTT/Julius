@@ -7,22 +7,22 @@ public class ArchitectureTests
 {
     #region Constants
 
-    private const string WebAPINamespace = "Julius.WebAPI";
-    private const string ApplicationNamespace = "Julius.Application";
-    private const string DomainNamespace = "Julius.Domain";
-    private const string InfrastructureDataNamespace = "Julius.Infrastructure.Data";
-    private const string InfrastructureIoCNamespace = "Julius.Infrastructure.IoC";
-    private const string InfrastructureSwaggerNamespace = "Julius.Infrastructure.Swagger";
-    private static string[] GetAllProjectsNamespaces() => new[]
+    private readonly string _webAPINamespace = typeof(Julius.WebAPI.AssemblyReference).Namespace ?? string.Empty;
+    private readonly string _applicationNamespace = typeof(Julius.Application.AssemblyReference).Namespace ?? string.Empty;
+    private readonly string _domainNamespace = typeof(Julius.Domain.AssemblyReference).Namespace ?? string.Empty;
+    private readonly string _infrastructureDataNamespace = typeof(Julius.Infrastructure.Data.AssemblyReference).Namespace ?? string.Empty;
+    private readonly string _infrastructureIoCNamespace = typeof(Julius.Infrastructure.IoC.AssemblyReference).Namespace ?? string.Empty;
+    private readonly string _infrastructureSwaggerNamespace = typeof(Julius.Infrastructure.Swagger.AssemblyReference).Namespace ?? string.Empty;
+    private string[] GetAllProjectsNamespaces() => new[]
     {
-        WebAPINamespace, 
-        ApplicationNamespace, 
-        DomainNamespace, 
-        InfrastructureDataNamespace, 
-        InfrastructureIoCNamespace, 
-        InfrastructureSwaggerNamespace
+        _webAPINamespace, 
+        _applicationNamespace, 
+        _domainNamespace, 
+        _infrastructureDataNamespace,
+        _infrastructureIoCNamespace,
+        _infrastructureSwaggerNamespace
     };
-    private static string[] GetNotAllowedProjectsNamespaces(string[] allowedProjectsNamespaces)
+    private string[] GetNotAllowedProjectsNamespaces(string[] allowedProjectsNamespaces)
     {
         return GetAllProjectsNamespaces()
             .Except(allowedProjectsNamespaces)
@@ -39,7 +39,7 @@ public class ArchitectureTests
 
         var allowedProjectsNamespaces = new[]
         {
-            DomainNamespace
+            _domainNamespace
         };
 
         string[] notAllowedProjectsNamespaces = GetNotAllowedProjectsNamespaces(allowedProjectsNamespaces);
@@ -48,7 +48,7 @@ public class ArchitectureTests
         var testResult = Types
             .InAssembly(domainAssembly)
             .ShouldNot()
-            .HaveDependencyOnAll(notAllowedProjectsNamespaces)
+            .HaveDependencyOnAny(notAllowedProjectsNamespaces)
             .GetResult();
 
         // Assert
@@ -63,9 +63,9 @@ public class ArchitectureTests
 
         var allowedProjectsNamespaces = new[]
         {
-            ApplicationNamespace,
-            DomainNamespace,
-            InfrastructureDataNamespace
+            _applicationNamespace,
+            _domainNamespace,
+            _infrastructureDataNamespace
         };
 
         string[] notAllowedProjectsNamespaces = GetNotAllowedProjectsNamespaces(allowedProjectsNamespaces);
@@ -74,7 +74,7 @@ public class ArchitectureTests
         var testResult = Types
             .InAssembly(applicationAssembly)
             .ShouldNot()
-            .HaveDependencyOnAll(notAllowedProjectsNamespaces)
+            .HaveDependencyOnAny(notAllowedProjectsNamespaces)
             .GetResult();
 
         // Assert
@@ -89,11 +89,11 @@ public class ArchitectureTests
 
         var allowedProjectsNamespaces = new[]
         {
-            WebAPINamespace,
-            ApplicationNamespace,
-            DomainNamespace,
-            InfrastructureIoCNamespace,
-            InfrastructureSwaggerNamespace
+            _webAPINamespace,
+            _applicationNamespace,
+            _domainNamespace,
+            _infrastructureIoCNamespace,
+            _infrastructureSwaggerNamespace
         };
 
         string[] notAllowedProjectsNamespaces = GetNotAllowedProjectsNamespaces(allowedProjectsNamespaces);
@@ -102,7 +102,7 @@ public class ArchitectureTests
         var testResult = Types
             .InAssembly(presentationAssembly)
             .ShouldNot()
-            .HaveDependencyOnAll(notAllowedProjectsNamespaces)
+            .HaveDependencyOnAny(notAllowedProjectsNamespaces)
             .GetResult();
 
         // Assert
@@ -117,9 +117,9 @@ public class ArchitectureTests
 
         var allowedProjectsNamespaces = new[]
         {
-            InfrastructureDataNamespace,
-            ApplicationNamespace,
-            DomainNamespace
+            _infrastructureDataNamespace,
+            _applicationNamespace,
+            _domainNamespace
         };
 
         string[] notAllowedProjectsNamespaces = GetNotAllowedProjectsNamespaces(allowedProjectsNamespaces);
@@ -128,7 +128,7 @@ public class ArchitectureTests
         var testResult = Types
             .InAssembly(infrastructureDataAssembly)
             .ShouldNot()
-            .HaveDependencyOnAll(notAllowedProjectsNamespaces)
+            .HaveDependencyOnAny(notAllowedProjectsNamespaces)
             .GetResult();
 
         // Assert
@@ -143,10 +143,10 @@ public class ArchitectureTests
 
         var allowedProjectsNamespaces = new[]
         {
-            InfrastructureIoCNamespace,
-            InfrastructureDataNamespace,
-            ApplicationNamespace,
-            DomainNamespace
+            _infrastructureIoCNamespace,
+            _infrastructureDataNamespace,
+            _applicationNamespace,
+            _domainNamespace
         };
 
         string[] notAllowedProjectsNamespaces = GetNotAllowedProjectsNamespaces(allowedProjectsNamespaces);
@@ -155,7 +155,7 @@ public class ArchitectureTests
         var testResult = Types
             .InAssembly(infrastructureIoCAssembly)
             .ShouldNot()
-            .HaveDependencyOnAll(notAllowedProjectsNamespaces)
+            .HaveDependencyOnAny(notAllowedProjectsNamespaces)
             .GetResult();
 
         // Assert
@@ -168,13 +168,18 @@ public class ArchitectureTests
         // Arrange
         var infrastructureSwaggerAssembly = typeof(Julius.Infrastructure.Swagger.AssemblyReference).Assembly;
 
-        string[] notAllowedProjectsNamespaces = GetNotAllowedProjectsNamespaces(Array.Empty<string>());
+        var allowedProjectsNamespaces = new[]
+        {
+            _infrastructureSwaggerNamespace,
+        };
+
+        string[] notAllowedProjectsNamespaces = GetNotAllowedProjectsNamespaces(allowedProjectsNamespaces);
 
         // Act
         var testResult = Types
             .InAssembly(infrastructureSwaggerAssembly)
             .ShouldNot()
-            .HaveDependencyOnAll(notAllowedProjectsNamespaces)
+            .HaveDependencyOnAny(notAllowedProjectsNamespaces)
             .GetResult();
 
         // Assert
