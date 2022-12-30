@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Julius.SharedKernel.Interfaces;
 
 namespace Julius.SharedKernel;
 
 public abstract class EntityBase : IEquatable<EntityBase>
 {
-    public Guid Id { get; private init; }
+    public Guid Id { get; set; }
 
     public EntityBase()
     {

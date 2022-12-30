@@ -11,5 +11,11 @@ namespace Julius.Application.Categories.Commands.CreateCategory
     {
         public string Name { get; set; }
         public CategoryType Type { get; set; }
+
+        public CreateCategoryCommand(string name, CategoryType type)
+        {
+            Name = name;
+            Type = type;
+        }
     }
 }

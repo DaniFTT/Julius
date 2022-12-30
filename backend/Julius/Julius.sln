@@ -39,13 +39,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Infrastructure.IoC",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - ArchitectureTests", "1 - ArchitectureTests", "{73A259B9-37CA-472D-91F8-270AA9F8BFE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecture.Tests", "tests\Architecture.Tests\Architecture.Tests.csproj", "{26F87D16-8FE4-4205-93DF-C07308353BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Tests.Architecture", "tests\Architecture.Tests\Julius.Tests.Architecture.csproj", "{26F87D16-8FE4-4205-93DF-C07308353BA9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - SharedKernel", "5 - SharedKernel", "{4B75058C-E2EF-4676-A72B-2969298D3A7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.SharedKernel", "src\Julius.SharedKernel\Julius.SharedKernel.csproj", "{30E77777-294C-480A-864E-0A5F582A2161}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.SharedKernel", "src\Julius.SharedKernel\Julius.SharedKernel.csproj", "{30E77777-294C-480A-864E-0A5F582A2161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests", "tests\Application.Tests\Application.Tests.csproj", "{6572228A-9EA7-49DE-8D12-D0D0EA6DF101}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Tests.Application", "tests\Application.Tests\Julius.Tests.Application.csproj", "{6572228A-9EA7-49DE-8D12-D0D0EA6DF101}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4D6A2E32-6F09-4A89-8D62-A9CB2C29C403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julius.Tests.Shared", "Julius.Shared.Tests\Julius.Tests.Shared.csproj", "{940C1301-54CE-4DB6-9921-F46F8D81A907}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +93,10 @@ Global
 		{6572228A-9EA7-49DE-8D12-D0D0EA6DF101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6572228A-9EA7-49DE-8D12-D0D0EA6DF101}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6572228A-9EA7-49DE-8D12-D0D0EA6DF101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940C1301-54CE-4DB6-9921-F46F8D81A907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940C1301-54CE-4DB6-9921-F46F8D81A907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940C1301-54CE-4DB6-9921-F46F8D81A907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940C1301-54CE-4DB6-9921-F46F8D81A907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +122,8 @@ Global
 		{4B75058C-E2EF-4676-A72B-2969298D3A7B} = {99703ED8-8734-4EB8-82ED-B5D99B8D4DDF}
 		{30E77777-294C-480A-864E-0A5F582A2161} = {4B75058C-E2EF-4676-A72B-2969298D3A7B}
 		{6572228A-9EA7-49DE-8D12-D0D0EA6DF101} = {38C146C6-E37B-4A45-988E-E16D62212F82}
+		{4D6A2E32-6F09-4A89-8D62-A9CB2C29C403} = {FCDDC2D1-0269-4A26-994F-34ED770C5B09}
+		{940C1301-54CE-4DB6-9921-F46F8D81A907} = {4D6A2E32-6F09-4A89-8D62-A9CB2C29C403}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5D12C56-F239-4BB9-8C70-2B1276F338A4}

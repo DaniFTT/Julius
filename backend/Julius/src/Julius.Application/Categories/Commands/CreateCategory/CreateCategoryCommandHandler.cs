@@ -9,9 +9,9 @@ namespace Julius.Application.Categories.Commands.CreateCategory
 
         }
 
-        public Category Handle(string name, CategoryType type)
+        public Category Handle(Category category)
         {
-            return new Category(name, type, "12345");
+            return category;
         }
     }
 }
