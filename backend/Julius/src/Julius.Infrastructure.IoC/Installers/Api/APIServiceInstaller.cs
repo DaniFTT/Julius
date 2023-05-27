@@ -9,6 +9,7 @@ namespace Julius.Infrastructure.IoC.Installers.Api
     {
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddTransient<GlobalExceptionHandlingMiddleware>();
             services.AddControllers(options =>
             {
                 options.Conventions.Add(new EndpointConvention());
