@@ -4,6 +4,7 @@ using Julius.Infrastructure.Data.DataBaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Julius.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230528003022_AddUserIdProp")]
+    partial class AddUserIdProp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +24,7 @@ namespace Julius.Infrastructure.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Julius.Domain.CategoryAggregate.Category", b =>
+            modelBuilder.Entity("Julius.SharedKernel.EntityBase", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,11 +33,29 @@ namespace Julius.Infrastructure.Data.Migrations
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset>("LastUpdatedAt")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EntityBase");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("EntityBase");
+                });
+
+            modelBuilder.Entity("Julius.Domain.CategoryAggregate.Category", b =>
+                {
+                    b.HasBaseType("Julius.SharedKernel.EntityBase");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -45,12 +65,7 @@ namespace Julius.Infrastructure.Data.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
+                    b.HasDiscriminator().HasValue("Category");
                 });
 #pragma warning restore 612, 618
         }

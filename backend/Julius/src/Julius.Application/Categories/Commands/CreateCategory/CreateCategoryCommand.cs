@@ -8,7 +8,7 @@ public sealed record CreateCategoryCommand : ICommand<Category>
     public string? Name { get; set; }
     public CategoryType? Type { get; set; }
 
-    public Category ToDomain(string userId) 
+    public Category ToDomain(Guid userId) 
     { 
         return new Category(this.Name!, this.Type!, userId);
     }

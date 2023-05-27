@@ -8,15 +8,17 @@ namespace Julius.SharedKernel
 {
     public abstract class AuditableEntity
     {
+        public Guid UserId { get; private set; }
         public DateTimeOffset CreatedAt { get; private set; }
         public DateTimeOffset LastUpdatedAt { get; private set; }
         public bool IsDeleted { get; private set; }
 
-        public AuditableEntity()
+        public AuditableEntity(Guid userId)
         {
             CreatedAt = DateTimeOffset.UtcNow;
             LastUpdatedAt = DateTimeOffset.UtcNow;
             IsDeleted = false;
+            UserId = userId;
         }
 
         public void MarkAsUpdated()

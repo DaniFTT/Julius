@@ -13,6 +13,7 @@ using System.Reflection;
 using Julius.Infrastructure.IoC.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Julius.Infrastructure.IoC.Installers.Api;
 
 namespace Julius.Infrastructure.IoC
 {
@@ -40,6 +41,8 @@ namespace Julius.Infrastructure.IoC
         public static WebApplication UseServices(this WebApplication app, IWebHostEnvironment env)
         {
             app.UseHttpsRedirection();
+            app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+            app.UseMiddleware<FakeUserMiddleware>();
             //app.UseAuthentication();
             //app.UseAuthorization();
             //app.UseCors(builder => builder

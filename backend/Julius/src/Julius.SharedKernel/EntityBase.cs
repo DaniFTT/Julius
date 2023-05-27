@@ -7,7 +7,7 @@ public abstract class EntityBase : AuditableEntity, IEquatable<EntityBase>
 {
     public Guid Id { get; set; }
 
-    public EntityBase() : base()
+    public EntityBase(Guid userId) : base(userId)
     {
         Id = Guid.NewGuid();
     }

@@ -23,7 +23,7 @@ internal sealed class CreateCategoryCommandHandler : ICommandHandler<CreateCateg
         if (categoryAlreadyExists is not null)
             return Result.Error("Categoria Já existe");
 
-        var category = request.ToDomain("123456");
+        var category = request.ToDomain(_repository.GetCurrentUserId());
         await _repository.AddAsync(category, cancellationToken);
 
         return Result.Success(category);

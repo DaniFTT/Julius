@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,7 +25,7 @@ public class CategoryEFConfig : IEntityTypeConfiguration<Category>
                 p => CategoryType.FromValue(p));
 
         builder.Property(p => p.UserId)
-            .IsRequired();
+        .IsRequired();
     }
 }
 

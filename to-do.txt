@@ -1,2 +1,9 @@
 1 - Montar diagrama de classes e de banco
 2 - Verificar sobre os testes de arquitetura
+
+
+Migration script =
+
+ PS C:\Users\Daniel Santos\Documents\_Daniel\ESTUDO\Projects\Julius\backend\Julius\src\Julius.Infrastructure.Data> dotnet ef --startup-project ../Julius.WebAPI/ migrations add AddUserIdProp
+
+PS C:\Users\Daniel Santos\Documents\_Daniel\ESTUDO\Projects\Julius\backend\Julius\src\Julius.Infrastructure.Data> dotnet ef --startup-project ../Julius.WebAPI/ database update

@@ -26,7 +26,7 @@ namespace Julius.API.Endpoints.CategoryEndpoints
         [SwaggerOperation(
           Summary = "Obter Categoria",
           Description = "Obtem a categoria por Id",
-          OperationId = "category.create"
+          OperationId = "category.getById"
         )]
         public override async Task<ActionResult<Category>> HandleAsync(Guid categoryId,
             CancellationToken cancellationToken = default)
