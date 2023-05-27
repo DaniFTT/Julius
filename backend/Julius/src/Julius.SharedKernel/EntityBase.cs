@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
-using Julius.SharedKernel.Interfaces;
 
 namespace Julius.SharedKernel;
 
-public abstract class EntityBase : IEquatable<EntityBase>
+public abstract class EntityBase : AuditableEntity, IEquatable<EntityBase>
 {
     public Guid Id { get; set; }
 
-    public EntityBase()
+    public EntityBase() : base()
     {
         Id = Guid.NewGuid();
     }
@@ -56,7 +55,10 @@ public abstract class EntityBase : IEquatable<EntityBase>
 
     private List<DomainEventBase> _domainEvents = new();
 
+
     [NotMapped]
+    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
 
     protected void RegisterDomainEvent(DomainEventBase domainEvent) => _domainEvents.Add(domainEvent);

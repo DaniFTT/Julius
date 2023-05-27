@@ -30,7 +30,7 @@
     <ProjectReference Include="..\..\src\Julius.Infrastructure.Data\Julius.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\..\src\Julius.Infrastructure.IoC\Julius.Infrastructure.IoC.csproj" />
     <ProjectReference Include="..\..\src\Julius.Infrastructure.Swagger\Julius.Infrastructure.Swagger.csproj" />
-    <ProjectReference Include="..\..\src\Julius.WebAPI\Julius.WebAPI.csproj" />
+    <ProjectReference Include="..\..\src\Julius.WebAPI\Julius.API.csproj" />
   </ItemGroup>
 
 </Project>

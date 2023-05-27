@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Julius.SharedKernel\Julius.SharedKernel.csproj" />
-    <ProjectReference Include="..\Julius.WebAPI\Julius.WebAPI.csproj" />
   </ItemGroup>
 
 </Project>

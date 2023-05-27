@@ -4,7 +4,7 @@ using Julius.Domain.CategoryAggregate;
 using Julius.Tests.Shared.Builders;
 using System.Xml.Linq;
 
-namespace Application.Tests.CategoriesTests.Commands;
+namespace Julius.UnitTests.Application.CategoriesTests.Commands;
 
 public class CreateCategoryCommandTest
 {
@@ -12,7 +12,7 @@ public class CreateCategoryCommandTest
     public void CreateCategoryCommandHandler_Handle_Should_Create_Valid_Category()
     {
         // Arrange
-        var categoryBuilder = CategoryBuilder.Default(); 
+        var categoryBuilder = CategoryBuilder.Default();
         var category = categoryBuilder.Build();
 
         // Act

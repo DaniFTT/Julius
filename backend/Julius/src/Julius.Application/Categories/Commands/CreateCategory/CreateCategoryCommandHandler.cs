@@ -1,17 +1,32 @@
-﻿using Julius.Domain.CategoryAggregate;
+﻿using Ardalis.Result;
+using Ardalis.Specification;
+using Julius.Application.Abstractions;
+using Julius.Domain.CategoryAggregate;
+using Julius.Domain.CategoryAggregate.Specifications;
+using Julius.SharedKernel.Interfaces;
+using MediatR;
 
-namespace Julius.Application.Categories.Commands.CreateCategory
+namespace Julius.Application.Categories.Commands.CreateCategory;
+
+internal sealed class CreateCategoryCommandHandler : ICommandHandler<CreateCategoryCommand, Category>
 {
-    public class CreateCategoryCommandHandler
+    private readonly IRepository<Category> _repository;
+
+    public CreateCategoryCommandHandler(IRepository<Category> repository)
     {
-        public CreateCategoryCommandHandler()
-        {
+        _repository = repository;
+    }
 
-        }
+    public async Task<Result<Category>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
+    {
+        var categoryAlreadyExists = await _repository.FirstOrDefaultAsync(new CategoryByNameSpec(request.Name!), cancellationToken);
+        if (categoryAlreadyExists is not null)
+            return Result.Error("Categoria Já existe");
 
-        public Category Handle(Category category)
-        {
-            return category;
-        }
+        var category = request.ToDomain("123456");
+        await _repository.AddAsync(category, cancellationToken);
+
+        return Result.Success(category);
     }
 }
+

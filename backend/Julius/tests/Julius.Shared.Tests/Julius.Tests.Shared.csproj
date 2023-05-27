@@ -13,11 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Julius.Domain\Julius.Domain.csproj" />
+    <Folder Include="Specimens\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Specimens\" />
+    <ProjectReference Include="..\..\src\Julius.Domain\Julius.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Julius.SharedKernel\Julius.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

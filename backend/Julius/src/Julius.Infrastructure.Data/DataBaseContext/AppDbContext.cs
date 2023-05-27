@@ -4,12 +4,15 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Julius.Domain.CategoryAggregate;
+using Microsoft.Extensions.Configuration;
 
 namespace Julius.Infrastructure.Data.DataBaseContext;
 
 public class AppDbContext : DbContext
 {
     private readonly IDomainEventDispatcher? _dispatcher;
+
+    public AppDbContext() : base() { }
 
     public AppDbContext(DbContextOptions<AppDbContext> options,
         IDomainEventDispatcher? dispatcher)
@@ -29,6 +32,8 @@ public class AppDbContext : DbContext
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
         int result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        if (result == 0)
+            throw new Exception("An error occurred while trying to save changes");
 
         if (_dispatcher == null) return result;
 

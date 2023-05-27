@@ -1,21 +1,16 @@
-﻿using Julius.Domain.CategoryAggregate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Julius.Application.Abstractions;
+using Julius.Domain.CategoryAggregate;
 
-namespace Julius.Application.Categories.Commands.CreateCategory
+namespace Julius.Application.Categories.Commands.CreateCategory;
+
+public sealed record CreateCategoryCommand : ICommand<Category>
 {
-    public class CreateCategoryCommand
-    {
-        public string Name { get; set; }
-        public CategoryType Type { get; set; }
+    public string? Name { get; set; }
+    public CategoryType? Type { get; set; }
 
-        public CreateCategoryCommand(string name, CategoryType type)
-        {
-            Name = name;
-            Type = type;
-        }
+    public Category ToDomain(string userId) 
+    { 
+        return new Category(this.Name!, this.Type!, userId);
     }
 }
+

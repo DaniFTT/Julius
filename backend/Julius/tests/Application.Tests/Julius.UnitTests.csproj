@@ -27,6 +27,7 @@
     <ProjectReference Include="..\..\Julius.Shared.Tests\Julius.Tests.Shared.csproj" />
     <ProjectReference Include="..\..\src\Julius.Application\Julius.Application.csproj" />
     <ProjectReference Include="..\..\src\Julius.Domain\Julius.Domain.csproj" />
+    <ProjectReference Include="..\Julius.Shared.Tests\Julius.Tests.Shared.csproj" />
   </ItemGroup>
 
 </Project>

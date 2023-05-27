@@ -1,5 +1,4 @@
 ﻿using AutoFixture;
-using Julius.Domain.CategoryAggregate;
 using Julius.Shared.Tests;
 using Julius.SharedKernel;
 
