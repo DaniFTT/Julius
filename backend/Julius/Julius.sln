@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.SharedKernel", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.UnitTests", "tests\Application.Tests\Julius.UnitTests.csproj", "{6572228A-9EA7-49DE-8D12-D0D0EA6DF101}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Tests.Shared", "tests\Julius.Shared.Tests\Julius.Tests.Shared.csproj", "{940C1301-54CE-4DB6-9921-F46F8D81A907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Julius.Shared.Tests", "tests\Shared.Tests\Julius.Shared.Tests.csproj", "{940C1301-54CE-4DB6-9921-F46F8D81A907}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{BA5B3C77-5FD0-461A-9AD0-7209CF89D7AC}"
 EndProject
