@@ -27,9 +27,9 @@ public class CategoryBuilder : BaseEntityBuilder<Category>
     /// <summary>
     /// Define o Nome da <see cref="Category"/> .
     /// </summary> 
-    public CategoryBuilder WithUserId(string userId)
+    public CategoryBuilder WithUserId(Guid userId)
     {
-        obj.UserId = userId;
+        obj.DefineUserId(userId);
         return this;
     }
 

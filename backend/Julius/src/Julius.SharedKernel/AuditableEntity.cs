@@ -30,5 +30,10 @@ namespace Julius.SharedKernel
         {
             IsDeleted = true;
         }
+
+        public void DefineUserId(Guid userId)
+        {
+            UserId = userId;
+        }
     }
 }
